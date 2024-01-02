@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# React.js vs Next.js
 
-## Getting Started
+## Rendering:
 
-First, run the development server:
+### _React.js:_
+- Typically renders on the client side, where the browser processes JavaScript to render the UI.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### _Next.js:_
+- Supports server-side rendering (SSR) and static site generation (SSG).
+- Allows pre-rendering pages on the server, improving performance and SEO.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+SEO is crucial for optimizing a website's visibility and ranking in search engine results.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Routing:
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### React.js:
+- Does not provide a built-in routing solution.
+- Developers often use third-party libraries like React Router for client-side routing.
 
-## Learn More
+### Next.js:
+- Comes with a built-in routing system.
 
-To learn more about Next.js, take a look at the following resources:
+- Handling page navigation is made easier by creating pages in the "pages" directory.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Next.js uses a file-based routing system, eliminating the need for external packages or complex configurations.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+From _*NextJs version 9*_ - new feature API Routes(Enabling the creation of serverless functions to handle API requests) will be introduced , without the need of traditional server . It allows you to build and deploy API's 
+- without managing server infastructure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+**Note:** Ensure that your Next.js project follows the predefined file structure, with pages in the "pages" directory for optimal routing.
