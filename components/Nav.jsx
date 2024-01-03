@@ -23,8 +23,8 @@ const Nav = () => {
                 <Image
                     src='/assets/images/PG.png'
                     alt='Promptopia Logo'
-                    width={30}
-                    height={30}
+                    width={40}
+                    height={40}
                     className='object-contain rounded-md'
                 />
                 <p className='logo_text'> PromptGen </p>
