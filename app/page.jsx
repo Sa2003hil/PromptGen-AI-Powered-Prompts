@@ -9,7 +9,7 @@ const Home = () => {
             </h1>
 
             <p className="desc text-center">
-                ImagineAI is an open-source AI prompting tool for modern world to discover ,create and share creative prompts
+                PromptGen is an open-source AI prompting tool for modern world to discover ,create and share creative prompts
             </p>
 
             {/* Feed Component */}

@@ -4,14 +4,14 @@ import Nav from "@components/Nav";
 import Provider from "@components/Provider";
 
 export const metadata = {
-    title: "ImagineAI",
+    title: "PromptGen",
     description: "Discover & Share AI Prompts",
 };
 
 const RootLayout = ({ children }) => (
     <html lang='en'>
         <head>
-            <link rel="icon" href="http://localhost:3000/_next/image?url=%2Fassets%2Fimages%2FIA.png&w=64&q=75" />
+            <link rel="icon" href="http://localhost:3000/_next/image?url=%2Fassets%2Fimages%2FPG.png&w=64&q=75" />
         </head>
         <body>
             <Provider>
