@@ -168,3 +168,9 @@
 .flex-between {
   @apply flex justify-between items-center;
 }
+
+/* hide the scrolbar */
+
+::-webkit-scrollbar {
+  display: none;
+}
