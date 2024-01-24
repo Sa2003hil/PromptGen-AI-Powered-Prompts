@@ -9,7 +9,8 @@ const Form = ({
     handleSubmit
 }) => {
     return (
-        <section className='w-full nax-w-full flex-start flex-col'>
+        <section className='w-full nax-w-full flex-start flex-col
+        '>
             <h1 className='font-bold text-2xl'>
                 <span className='blue_gradient'>{type} Post</span>
             </h1>
