@@ -39,13 +39,15 @@ const CreatePrompt = () => {
     };
 
     return (
-        <Form
-            type="Create"
-            handleSubmit={createPrompt}
-            submitting={submitting}
-            setPost={setPost}
-            post={post}
-        />
+        <div className="m-auto">
+            <Form
+                type="Create"
+                handleSubmit={createPrompt}
+                submitting={submitting}
+                setPost={setPost}
+                post={post}
+            />
+        </div>
     );
 };
 
