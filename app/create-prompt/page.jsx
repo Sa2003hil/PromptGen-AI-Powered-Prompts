@@ -1,56 +1,52 @@
-"use client"
-import React from 'react'
-import { useState } from 'react'
-import { useSession } from 'next-auth/react'
-import { useRouter } from 'next/navigation'
+"use client";
 
-import Form from '@components/Form'
+import { useState } from "react";
+import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
-
+import Form from "@components/Form";
 
 const CreatePrompt = () => {
-    const [submitting, setsubmitting] = useState(false)
-    const [post, setPost] = useState({
-        prompt: '',
-        tag: ''
-    });
-
     const router = useRouter();
     const { data: session } = useSession();
+    const [submitting, setSubmitting] = useState(false);
+    const [post, setPost] = useState({
+        prompt: '',
+        tag: '',
+    });
 
     const createPrompt = async (e) => {
         e.preventDefault();
-        setsubmitting(true);
+        setSubmitting(true);
 
         try {
-            const response = await fetch('/api/prompt/new', {
+            const res = await fetch('/api/prompt/new', {
                 method: 'POST',
                 body: JSON.stringify({
                     prompt: post.prompt,
-                    userID: session?.user.id,
-                    tag: post.tag
+                    tag: post.tag,
+                    userId: session?.user.id,
                 })
             })
-
-            if (response.ok) {
+            if (res.ok) {
                 router.push('/');
             }
         } catch (error) {
-
+            console.log(error);
+        } finally {
+            setSubmitting(false);
         }
+    };
 
-    }
     return (
-        <div className='p-28'>
-            <Form
-                type="Create"
-                post={post}
-                setPost={setPost}
-                submitting={submitting}
-                handleSubmit={createPrompt}
-            />
-        </div>
-    )
-}
+        <Form
+            type="Create"
+            handleSubmit={createPrompt}
+            submitting={submitting}
+            setPost={setPost}
+            post={post}
+        />
+    );
+};
 
-export default CreatePrompt
+export default CreatePrompt;
