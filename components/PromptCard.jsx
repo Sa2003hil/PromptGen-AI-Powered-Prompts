@@ -1,8 +1,14 @@
 "use client"
 import React, { useState } from 'react'
+import { useSession } from 'next-auth/react'
 import Image from 'next/image'
+import { useRouter, usePathname } from 'next/navigation'
 
 const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
+
+    const { data: session } = useSession();
+    const pathName = usePathname();
+    const router = useRouter();
 
     const [copied, setcopied] = useState("");
     const handleCopy = () => {
@@ -42,6 +48,13 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
             </div>
             <p className='my-4 font-santoshi text-sm text-gray-700'>{post.prompt}</p>
             <p className='font-inter text-sm blue_gradient cursor-pointer' onClick={() => handleTagClick && handleTagClick(post.tag)}>{post.tag}</p>
+
+            {session?.user.id === post.creator._id && pathName === '/profile' && (
+                <div className=' flex gap-3 m-auto justify-center items-center'>
+                    <p className='font-inter text-sm green_gradient border-[1px] text-center rounded-full hover:scale-105  transition ease-in p-3  w-[30%] mt-3 border-green-400 cursor-pointer' onClick={handleEdit}>Edit</p>
+                    <p className='font-inter text-sm orange_gradient border-[1px] text-center rounded-full hover:scale-105  transition ease-in p-3  w-[30%] mt-3 border-orange-300 cursor-pointer' onClick={handleDelete}>Delete</p>
+                </div>
+            )}
         </div>
     )
 }
